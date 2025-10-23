@@ -277,6 +277,8 @@ fn build_rocksdb() {
         }
     }
 
+    config.define("NROCKSDB_THREAD_STATUS", None);
+
     config.define("ROCKSDB_SUPPORT_THREAD_LOCAL", None);
 
     if cfg!(feature = "jemalloc") && NO_JEMALLOC_TARGETS.iter().all(|i| !target.contains(i)) {
